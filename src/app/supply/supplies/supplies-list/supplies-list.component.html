@@ -1,0 +1,36 @@
+<app-search></app-search>
+
+<div class="container">
+
+  <h3 class="first">Lista de Insumos</h3>
+   <p-table [value]="lista">
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="col-h-n">Código</th>
+        <th class="col-h-d">Descrição</th>
+        <th class="col-h-u">Und.</th>
+        <th class="col-h-g">Classificação</th>
+        <th class="col-h-sg">Subclassificação</th>
+        <th class="col-h-a">Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-l>
+      <tr>
+        <td class="col-b-n">{{l.id}}</td>
+        <td class="col-b-d">{{l.name}}</td>
+        <td class="col-b-n">{{l.unity}}</td>
+        <td class="col-b-g">{{l.group}}</td>
+        <td class="col-b-sg">{{l.subgroup}}</td>
+        <td>
+          <button pButton icon="pi pi-check"></button>
+          <button pButton icon="pi pi-trash"></button>
+        </td>
+
+
+      </tr>
+    </ng-template>
+  </p-table>
+  <a routerLink="/supplies">Supplies</a>
+
+
+</div>

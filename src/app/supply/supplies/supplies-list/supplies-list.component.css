@@ -1,0 +1,41 @@
+.col-h-n {
+    width: 90px;
+}
+.col-b-n {
+    text-align: center;
+}
+
+.col-h-d {
+    width: 600px;
+}
+.col-b-d {
+    
+}
+.col-h-u {
+    width: 50px
+}
+.col-b-u {
+
+}
+
+.col-h-g {
+    widows: 200px;
+
+}
+.col-b-g {
+
+}
+
+.col-h-sg {
+    widows: 200px;
+}
+.col-b-sg {
+
+}
+
+.col-h-a {
+width: 100px;
+}
+.col-b-a {
+margin: 0 auto;
+}

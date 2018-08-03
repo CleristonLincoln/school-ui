@@ -1,0 +1,27 @@
+<div class="container">
+
+    <div class="ui-g">
+  
+  
+  
+      <div class="ui-g-6">
+        <form autocomplete="false" (ngSubmit)="salvar()" [formGroup]="formulario">
+  {{formulario.value | json}}
+          <h2>Cadastro de grupos</h2>
+  
+          <div class="ui-g-10 ui-fluid">
+            <label for="">Nome</label>
+            <input pInputText formControlName="name">
+          </div>
+  
+          <div class="ui-g-2">
+            <button pButton type="submit" label="Salvar"></button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  
+    
+  </div>
+ 

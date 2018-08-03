@@ -1,0 +1,45 @@
+<div class="container">
+  <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
+
+    {{formulario.value |json}}
+
+
+    <div class="ui-g">
+     <div class="ui-g-12">
+        <h2>Pesquisa de Insumos</h2>
+      </div>
+
+      <div class="ui-g-2 ui-fluid">
+        <label>Código</label>
+        <input type="text" pInputText formControlName="id">
+      </div>
+
+      <div class="ui-g-8 ui-fluid">
+        <label>Nome</label>
+        <input type="text" pInputText formControlName="name">
+      </div>
+
+      <div class="ui-g-2 ui-fluid">
+        <label>Unidade</label>
+        <p-dropdown name="group" [options]="itens5" [autoWidth]="false" formControlName="unity"></p-dropdown>
+      </div>
+
+      <div class="ui-g-4 ui-fluid" formGroupName="group">
+        <label>Grupo</label>
+        <p-dropdown name="group" [options]="itens1" placeholder="Selecione" [autoWidth]="false" [filter]="true" formControlName="name"></p-dropdown>
+      </div>
+
+      <div class="ui-g-4 ui-fluid" formGroupName="subgroup">
+        <label>Subgrupo</label>
+        <p-dropdown name="group" [options]="itens2" placeholder="Selecione" [autoWidth]="false" [filter]="true" formControlName="name"></p-dropdown>
+      </div>
+
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Pesquisar" [disabled]="!formulario.valid"></button>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>

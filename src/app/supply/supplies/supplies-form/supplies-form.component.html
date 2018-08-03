@@ -1,0 +1,85 @@
+<div class="container">
+  <h2>Pesquisa de insumos</h2>
+
+    <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
+  
+      {{formulario.value |json}}
+      <br> {{formulario.status}}
+  
+      <div class="ng-g">
+  
+        <div class="ui-g-8">
+  
+          <div class="ui-g">
+            <div class="ui-g-4">
+              <h2>Cadastro de Insumos</h2>
+            </div>
+          </div>
+  
+          <div class="ui-g">
+  
+            <div class="ui-g-4 ui-fluid">
+            
+                <label>Código</label>
+                <span class="ui-inputgroup-addon"><i class="pi pi-search"></i></span>
+                <input type="text" pInputText formControlName="id" disabled>
+              
+            </div>
+  
+            <div class="ui-g-10 ui-fluid">
+              <label>Nome</label>
+              <input type="text" pInputText formControlName="name">
+            </div>
+  
+            <div class="ui-g-2 ui-fluid">
+              <label>Unidade</label>
+              <p-dropdown name="group" [options]="itens5" [autoWidth]="false" formControlName="unity" ></p-dropdown>
+            </div>
+  
+            <div class="ui-g-6 ui-fluid" formGroupName="group">
+              <label>Grupo</label>
+              <p-dropdown name="group" [options]="itens1" placeholder="Selecione" [autoWidth]="false" [filter]="true" formControlName="name"></p-dropdown>
+            </div>
+  
+            <div class="ui-g-6 ui-fluid" formGroupName="subgroup">
+              <label>Subgrupo</label>
+              <p-dropdown name="group" [options]="itens2" placeholder="Selecione" [autoWidth]="false" [filter]="true" formControlName="name"></p-dropdown>
+            </div>
+  
+            <div class="ui-g-4 ui-fluid" formGroupName="expenseType">
+              <label>Tipo</label>
+              <p-selectButton [options]="itens3" formControlName="name"></p-selectButton>
+
+            </div>
+  
+            <div class="ui-g-12 ui-fluid">
+              <label for="">Nota de Uso</label>
+              <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" formControlName="noteUsing"></textarea>
+            </div>
+  
+  
+            <div class="ui-g-12">
+              <button pButton type="submit" label="Salvar" [disabled]="!formulario.valid"></button>
+            </div>
+  
+          </div>
+        </div>
+  
+        <div class="ui-g">
+          <div class="ui-g-4 image">
+            <p-galleria [images]="imagens" panelWidth="300" panelHeight="180" [showCaption]="false"></p-galleria>
+            <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUploadAuto($event)"
+              auto="true" chooseLabel="Browse"></p-fileUpload>
+  
+          </div>
+        </div>
+  
+      </div>
+  
+  
+  
+  
+  
+    </form>
+  
+  </div>
