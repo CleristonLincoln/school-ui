@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {DropdownModule} from 'primeng/dropdown';
@@ -29,7 +30,8 @@ import { SearchComponent } from './supplies-list/search/search.component';
     SelectButtonModule,
     FileUploadModule,
     GalleriaModule,
-    InputTextareaModule
+    InputTextareaModule,
+    HttpClientModule
   ],
   declarations: [
     SuppliesComponent,

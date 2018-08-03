@@ -3,7 +3,7 @@
 <div class="container">
 
   <h3 class="first">Lista de Insumos</h3>
-   <p-table [value]="lista">
+   <p-table [value]="supplies">
     <ng-template pTemplate="header">
       <tr>
         <th class="col-h-n">Código</th>
@@ -19,7 +19,7 @@
         <td class="col-b-n">{{l.id}}</td>
         <td class="col-b-d">{{l.name}}</td>
         <td class="col-b-n">{{l.unity}}</td>
-        <td class="col-b-g">{{l.group}}</td>
+        <td class="col-b-g">{{l.subgroup}}</td>
         <td class="col-b-sg">{{l.subgroup}}</td>
         <td>
           <button pButton icon="pi pi-check"></button>
