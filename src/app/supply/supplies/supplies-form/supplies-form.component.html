@@ -22,7 +22,7 @@
             
                 <label>Código</label>
                 <span class="ui-inputgroup-addon"><i class="pi pi-search"></i></span>
-                <input type="text" pInputText formControlName="id" disabled>
+                <input type="text" pInputText >
               
             </div>
   
@@ -36,19 +36,20 @@
               <p-dropdown name="group" [options]="itens5" [autoWidth]="false" formControlName="unity" ></p-dropdown>
             </div>
   
-            <div class="ui-g-6 ui-fluid" formGroupName="group">
+            <div class="ui-g-6 ui-fluid" >
               <label>Grupo</label>
-              <p-dropdown name="group" [options]="itens1" placeholder="Selecione" [autoWidth]="false" [filter]="true" formControlName="name"></p-dropdown>
+              <p-dropdown name="group" [options]="itens1" placeholder="Selecione" 
+                [autoWidth]="false" [filter]="true" ></p-dropdown>
             </div>
   
-            <div class="ui-g-6 ui-fluid" formGroupName="subgroup">
+            <div class="ui-g-6 ui-fluid" >
               <label>Subgrupo</label>
-              <p-dropdown name="group" [options]="itens2" placeholder="Selecione" [autoWidth]="false" [filter]="true" formControlName="name"></p-dropdown>
+              <p-dropdown name="group" [options]="itens2" placeholder="Selecione" [autoWidth]="false" [filter]="true" ></p-dropdown>
             </div>
   
-            <div class="ui-g-4 ui-fluid" formGroupName="expenseType">
+            <div class="ui-g-4 ui-fluid" >
               <label>Tipo</label>
-              <p-selectButton [options]="itens3" formControlName="name"></p-selectButton>
+              <p-selectButton [options]="itens3" ></p-selectButton>
 
             </div>
   
@@ -65,14 +66,14 @@
           </div>
         </div>
   
-        <div class="ui-g">
+      <!--  <div class="ui-g">
           <div class="ui-g-4 image">
             <p-galleria [images]="imagens" panelWidth="300" panelHeight="180" [showCaption]="false"></p-galleria>
             <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUploadAuto($event)"
               auto="true" chooseLabel="Browse"></p-fileUpload>
   
           </div>
-        </div>
+        </div> -->
   
       </div>
   

@@ -1,3 +1,4 @@
+
 export class Supplies {
     id: number;
     name: string;
@@ -6,4 +7,16 @@ export class Supplies {
     subgroup: string;
     unity: string;
     expenseType: string;
+}
+
+
+export class Group {
+    id: number;
+    name: string;
+}
+
+export class Subgroup  {
+    id: number;
+    name: string;
+    group = new Group();
 }

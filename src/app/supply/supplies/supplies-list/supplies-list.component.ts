@@ -1,6 +1,8 @@
+
 import { SuppliesService } from './../supplies.service';
 import { Component, OnInit } from '@angular/core';
 import { Supplies } from '../../../entity';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-supplies-list',
@@ -9,8 +11,7 @@ import { Supplies } from '../../../entity';
 })
 export class SuppliesListComponent implements OnInit {
 
- supplies: Supplies[];
-
+  supplies: Supplies[];
 
   constructor(
     private service: SuppliesService
@@ -18,14 +19,17 @@ export class SuppliesListComponent implements OnInit {
 
   ngOnInit() {
 
-   this.getAll();
-    }
-
-  getAll(): any {
-    this.service.getAll()
-    .subscribe( data => {
-      this.supplies = data.content;
-      console.log(data);
-    });
+    this.getAll();
   }
+
+  getAll() {
+    this.service.getAll().pipe(
+      map(resp => resp.content))
+      .subscribe(data => {
+        this.supplies = data;
+        console.log(data);
+      });
+
+  }
+
 }

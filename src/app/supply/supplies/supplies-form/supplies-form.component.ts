@@ -1,6 +1,8 @@
 import { SelectItem } from 'primeng/components/common/selectitem';
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormGroup, FormBuilder } from '../../../../../node_modules/@angular/forms';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { SuppliesService } from '../supplies.service';
+import { Supplies } from '../../../entity';
 
 @Component({
   selector: 'app-supplies-form',
@@ -11,44 +13,17 @@ export class SuppliesFormComponent implements OnInit {
 
   private formulario: FormGroup;
 
-
-
-  itens1: SelectItem[];
-  itens2: SelectItem[];
-  itens3: SelectItem[];
-  itens5: SelectItem[];
-
-  group = [];
-  subgroup = [];
-  imagens: any[];
-  expenseType = [];
-
+  supplies: Supplies[];
   constructor(
-    private formBiulder: FormBuilder
+    private formBiulder: FormBuilder,
+    private service: SuppliesService
   ) {
-    this.itens1 = [
-      { label: 'Combustível', value: 1 }
-    ];
-    this.itens2 = [
-      { label: 'Gasolina', value: 1 }
-    ];
-    this.itens3 = [
-      { label: 'Custeio', value: 1 },
-      { label: 'Capital', value: 2 }
-    ];
 
-    this.itens5 = [
-      { label: 'L', value: 1 }
-    ];
   }
 
   ngOnInit() {
     this.configurarFormulario();
 
-    this.imagens = [];
-    this.imagens.push({ source: 'assets/images/lapis1.jpg' });
-    this.imagens.push({ source: 'assets/images/lapis2.jpg' });
-    this.imagens.push({ source: 'assets/images/lapis3.jpg' });
 
   }
 
@@ -75,7 +50,13 @@ export class SuppliesFormComponent implements OnInit {
 
 
   salvar() {
-    console.log(this.formulario.value);
+   /* this.service.postEntity(this.formulario.value)
+    .subscribe(data => {
+      this.supplies.push(this.formulario.value);
+      console.log(this.formulario.value);
+    }) ;
+*/
   }
+
 
 }
