@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ClassificationService } from './../classification.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { SelectItem } from '../../../../../node_modules/primeng/components/common/selectitem';
 
 @Component({
@@ -8,20 +9,24 @@ import { SelectItem } from '../../../../../node_modules/primeng/components/commo
 })
 export class ClassificationSubgroupListComponent implements OnInit {
 
-  itens: SelectItem[];
-
-  constructor() {
-
-    this.itens = [
-      {label:  'Alimentação', value: 1},
-      {label:  'Transporte', value: 2},
-      {label:  'Escritorio', value: 3},
-      {label:  'Taxas', value: 4},
-      {label:  'Impostos', value: 5}
-    ];
-  }
+  subgroup = [];
+  @Input() recebeIdGrupo: any;
+  constructor(
+    private service: ClassificationService
+  ) { }
 
   ngOnInit() {
+    this.getAllSubgroup();
+    console.log(this.recebeIdGrupo);
   }
 
+
+  getAllSubgroup() {
+    this.service.getAllSubgroup();
+  }
+
+
+getIdGroup() {
+
+}
 }

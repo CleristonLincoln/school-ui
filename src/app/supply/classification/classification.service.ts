@@ -1,4 +1,4 @@
-import { Group } from './../../entity';
+import { Group, Subgroup } from './../../entity';
 import { Observable } from 'node_modules/rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -8,14 +8,23 @@ import { Injectable } from '@angular/core';
 })
 export class ClassificationService {
 
-  url = 'http://localhost:8080/group';
+  url = 'http://localhost:8080/';
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
-getAll(): Observable<Group[]> {
-  return this.http.get<Group[]>(this.url);
-}
+  getAllGroup(): Observable<Group[]> {
+    return this.http.get<Group[]>(`${this.url}group`);
+  }
+
+  getAllSubgroup() {
+    return this.http.get<Subgroup>(`${this.url}subgroup`);
+  }
+
+  getIdSubgroup( id_group_item: number) {
+    return this.http.get<Subgroup>(`${this.url}subgroup/group/${id_group_item}`);
+  }
+
 
 }

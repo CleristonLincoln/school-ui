@@ -36,10 +36,10 @@
               <p-dropdown name="group" [options]="itens5" [autoWidth]="false" formControlName="unity" ></p-dropdown>
             </div>
   
-            <div class="ui-g-6 ui-fluid" >
+            <div class="ui-g-6 ui-fluid" formGroupName="group">
               <label>Grupo</label>
-              <p-dropdown name="group" [options]="itens1" placeholder="Selecione" 
-                [autoWidth]="false" [filter]="true" ></p-dropdown>
+              <p-dropdown name="group" [options]="group" placeholder="Selecione" 
+                [autoWidth]="false" [filter]="true" formControlName="name"></p-dropdown>
             </div>
   
             <div class="ui-g-6 ui-fluid" >

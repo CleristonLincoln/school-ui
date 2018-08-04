@@ -1,10 +1,6 @@
-import { Supplies, Group } from './../../../entity';
-import { map } from 'rxjs/operators';
+import { Group } from './../../../entity';
 import { Component, OnInit, Output } from '@angular/core';
-
-
 import { ClassificationService } from '../classification.service';
-
 
 
 @Component({
@@ -15,27 +11,30 @@ import { ClassificationService } from '../classification.service';
 export class ClassificationGroupListComponent implements OnInit {
 
   grupo: Group[];
-  lista = [];
+  @Output() idSelecionado: number;
   constructor(
     private service: ClassificationService
-  ) {
-
-  }
+  ) { }
 
   ngOnInit() {
-    this.getList();
+    this.getListGroup();
   }
 
-  getList() {
-    this.service.getAll()
-    .subscribe(data => {
-      this.grupo = data;
-      console.log(data);
-    });
+  getListGroup() {
+    this.service.getAllGroup()
+      .subscribe(data => {
+        this.grupo = data;
+        //   console.log(data);
+      });
 
   }
 
+  onRowSelect(event) {
 
+   this.idSelecionado = event.data.id;
+
+   console.log(this.idSelecionado);
+  }
 
 
 }

@@ -1,8 +1,11 @@
+import { Subgroup } from './../../../entity';
+import { map } from 'rxjs/operators';
 import { SelectItem } from 'primeng/components/common/selectitem';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { SuppliesService } from '../supplies.service';
-import { Supplies } from '../../../entity';
+import { Supplies, Group } from '../../../entity';
+import { ClassificationService } from '../../classification/classification.service';
 
 @Component({
   selector: 'app-supplies-form',
@@ -12,17 +15,23 @@ import { Supplies } from '../../../entity';
 export class SuppliesFormComponent implements OnInit {
 
   private formulario: FormGroup;
-
   supplies: Supplies[];
+  group: any[];
+  subgroup: any[];
+
+
   constructor(
     private formBiulder: FormBuilder,
-    private service: SuppliesService
+    private service: SuppliesService,
+    private classificarionService: ClassificationService
   ) {
 
   }
 
   ngOnInit() {
     this.configurarFormulario();
+
+    this.loadGroup();
 
 
   }
@@ -34,8 +43,7 @@ export class SuppliesFormComponent implements OnInit {
       name: [null, [Validators.minLength(3)]],
       noteUsing: [],
       group: this.formBiulder.group({
-        name: [],
-        test: []
+        name: []
       }),
       subgroup: this.formBiulder.group({
         name: []
@@ -50,13 +58,20 @@ export class SuppliesFormComponent implements OnInit {
 
 
   salvar() {
-   /* this.service.postEntity(this.formulario.value)
-    .subscribe(data => {
-      this.supplies.push(this.formulario.value);
-      console.log(this.formulario.value);
-    }) ;
-*/
+
   }
+
+  loadGroup() {
+    this.classificarionService.getAllGroup()
+    .subscribe( lista => {
+        this.group = lista.map(g => ({
+          label: g.name, value: g.id
+        }));
+      });
+  }
+
+
+
 
 
 }

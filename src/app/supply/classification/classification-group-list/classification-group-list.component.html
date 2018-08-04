@@ -1,9 +1,8 @@
-
-
 <div class="container">
   <div class="ui-g">
     <div class="ui-g-6">
-      <p-table [value]="grupo" [responsive]="true" selectionMode="single">
+      <p-table [value]="grupo" [responsive]="true" selectionMode="single" [(selection)]="selectedGroup" dataKey="id"
+      (onRowSelect)="onRowSelect($event)">
         <ng-template pTemplate="header">
           <tr>
             <th class="col-n">Nº</th>
@@ -14,7 +13,7 @@
 
 
         <ng-template pTemplate="body" let-rowData let-u>
-          <tr>
+          <tr [pSelectableRow]="rowData">
             <td class="ui-b-n"> {{ u.id }}</td>
             <td>{{ u.name }}</td>
             <td class="col-acoes">
@@ -23,6 +22,13 @@
             </td>
           </tr>
         </ng-template>
+
+        <ng-template pTemplate="summary">
+          <div style="text-align: left">
+       <!--    selecionado: {{selectedGroup.id | json}}
+       -->  </div>
+        </ng-template>
+
       </p-table>
     </div>
   </div>
