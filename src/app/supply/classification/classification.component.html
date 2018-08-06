@@ -1,13 +1,14 @@
 <div class="ui-g">
     <div class="ui-g-6">
         <app-classification-group-form></app-classification-group-form>
-        <app-classification-group-list></app-classification-group-list>
+        <app-classification-group-list (idSelecionado)='aoSelecionar($event)'></app-classification-group-list>
     </div>
 
     <div class="ui-g-6">
 
         <app-classification-subgroup-form></app-classification-subgroup-form>
-        <app-classification-subgroup-list></app-classification-subgroup-list>
+        <app-classification-subgroup-list [idGrupo]="idGroup" ></app-classification-subgroup-list>
+       Escutando {{idGroup}}
     </div>
 
 </div>

@@ -1,5 +1,6 @@
+import { ClassificationSubgroupListComponent } from './../classification-subgroup-list/classification-subgroup-list.component';
 import { Group } from './../../../entity';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { ClassificationService } from '../classification.service';
 
 
@@ -11,30 +12,30 @@ import { ClassificationService } from '../classification.service';
 export class ClassificationGroupListComponent implements OnInit {
 
   grupo: Group[];
-  @Output() idSelecionado: number;
+
+  @Output() idSelecionado = new EventEmitter();
+
   constructor(
-    private service: ClassificationService
+    private service: ClassificationService,
   ) { }
 
   ngOnInit() {
     this.getListGroup();
   }
 
+  // retornar todos os grupos cadastrados
   getListGroup() {
     this.service.getAllGroup()
       .subscribe(data => {
         this.grupo = data;
-        //   console.log(data);
       });
 
   }
 
   onRowSelect(event) {
-
-   this.idSelecionado = event.data.id;
-
-   console.log(this.idSelecionado);
+   this.idSelecionado.emit(event.data.id); // retorna o id do que foi selecionado
   }
+
 
 
 }

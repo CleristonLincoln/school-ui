@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-classification',
   templateUrl: './classification.component.html',
   styleUrls: ['./classification.component.css']
 })
-export class ClassificationComponent implements OnInit {
+export class ClassificationComponent {
 
-  constructor() { }
+  idGroup: any;
+  @Output() idTest = new EventEmitter();
 
-  ngOnInit() {
+  // pega o id vindo do grupo e retornar para ser usado pelo subgrupo
+  aoSelecionar(id) {
+   this.idGroup = id;
   }
+
 
 }

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="ui-g">
       <div class="ui-g-6">
-        <p-table [value]="itens" [responsive]="true" selectionMode="single">
+        <p-table [value]="subgrupo" [responsive]="true" selectionMode="single">
           <ng-template pTemplate="header">
             <tr>
               <th class="col-n">Nº</th>
@@ -13,8 +13,8 @@
   
           <ng-template pTemplate="body" let-rowData let-u>
             <tr>
-              <td class="ui-b-n"> {{ u.value }}</td>
-              <td>{{ u.label }}</td>
+              <td class="ui-b-n"> {{ u.id }}</td>
+              <td>{{ u.name }}</td>
               <td class="col-acoes">
                 <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></button>
                 <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
