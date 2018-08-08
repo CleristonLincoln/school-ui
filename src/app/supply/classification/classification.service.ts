@@ -1,7 +1,14 @@
 import { Group, Subgroup } from './../../entity';
 import { Observable } from 'node_modules/rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'no-auth'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -20,12 +27,32 @@ export class ClassificationService {
     return this.http.get<Group[]>(`${this.url}group`);
   }
 
+  postGroup(group: Group) {
+    this.http.post<Group>(`${this.url}group`, group, httpOptions)
+    .subscribe( dados => {
+     // console.log(group);
+    });
+ }
 
   getIdSubgroup(id): Observable<Subgroup[]> {
     // id = 2;
     return this.http.get<Subgroup[]>(`${this.url}subgroup/group/${id}`);
-
   }
 
+  postSubgroup(subgroup: Subgroup) {
+    this.http.post<Subgroup>(`${this.url}subgroup`, subgroup, httpOptions)
+    .subscribe();
+
+   console.log(subgroup);
+  }
+
+
+  removeSubgroup(subgroup: Subgroup | number) {
+   // return this.http.delete(`${this.url}subgroup/${id}`);
+   const id = typeof subgroup === 'number' ? subgroup : subgroup.id;
+   const url = `${this.url}subgroup/${id}`;
+  console.log(`Id apresentado ao service para deletar${id}`);
+    this.http.delete<Subgroup>(url).subscribe();
+  }
 
 }

@@ -10,7 +10,8 @@ import { Component, OnInit, Input, ViewChild, OnChanges, SimpleChanges } from '@
 export class ClassificationSubgroupListComponent implements OnInit, OnChanges {
 
   subgrupo: Subgroup[];
-  @Input() idGrupo = 1;
+  @Input() idGrupo: any;
+
 
   constructor(
     private service: ClassificationService,
@@ -30,18 +31,19 @@ export class ClassificationSubgroupListComponent implements OnInit, OnChanges {
       .subscribe(data => {
         this.subgrupo = data;
       });
-
-
     }
 
-
-   
   }
 
   // detecta que o idGrupo foi alterado
   ngOnChanges(changes: SimpleChanges): void {
     // console.log(changes);
     this.getIdGroup();
+  }
+
+
+  removeSubgroup(subgroup: Subgroup): void {
+    this.service.removeSubgroup(subgroup.id);
   }
 
 }

@@ -18,6 +18,7 @@ import { ClassificationComponent } from './classification/classification.compone
 import { ClassificationSubgroupListComponent } from './classification/classification-subgroup-list/classification-subgroup-list.component';
 import { UnityFormComponent } from './unity/unity-form/unity-form.component';
 import { UnityListComponent } from './unity/unity-list/unity-list.component';
+import { SharedModule } from './../shared/shared.module';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { UnityListComponent } from './unity/unity-list/unity-list.component';
     // importes framework
     InputTextModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    SharedModule
 
   ],
   declarations: [

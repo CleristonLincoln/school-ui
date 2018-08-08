@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './topmenu.component.html',
   styleUrls: ['./topmenu.component.css']
 })
-export class TopmenuComponent implements OnInit {
+export class TopmenuComponent  {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

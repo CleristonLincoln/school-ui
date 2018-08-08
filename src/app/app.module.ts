@@ -1,3 +1,5 @@
+import { MenuModule } from './menu/menu.module';
+
 import { SuppliesService } from './supply/supplies/supplies.service';
 import { AppRoutes } from './app.routes';
 import { SupplyModule } from './supply/supply.module';
@@ -13,28 +15,31 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavbarComponent } from './menu/navbar/navbar.component';
 import { TopmenuComponent } from './menu/topmenu/topmenu.component';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    TopmenuComponent,
 
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MessageModule,
+    MessagesModule,
 
 
     ButtonModule,
-    MatButtonModule,
-    MatSidenavModule,
 
+    MenuModule,
     SupplyModule,
+    MenuModule,
 
-    AppRoutes,
+
+    AppRoutes
 
 
   ],

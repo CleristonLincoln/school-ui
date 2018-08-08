@@ -18,5 +18,5 @@ export class Group {
 export class Subgroup  {
     id: number;
     name: string;
-    group = new Group();
+    groupItem = new Group();
 }

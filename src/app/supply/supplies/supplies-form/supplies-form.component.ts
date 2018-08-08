@@ -1,5 +1,3 @@
-import { Subgroup } from './../../../entity';
-import { map } from 'rxjs/operators';
 import { SelectItem } from 'primeng/components/common/selectitem';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
@@ -19,13 +17,18 @@ export class SuppliesFormComponent implements OnInit {
   group: any[];
   subgroup: any[];
 
+  tipos: SelectItem[];
+
 
   constructor(
     private formBiulder: FormBuilder,
     private service: SuppliesService,
     private classificarionService: ClassificationService
   ) {
-
+    this.tipos = [
+      {value: '1', label: 'Custerio'},
+      {value: '2', label: 'Capital'}
+    ];
   }
 
   ngOnInit() {
@@ -41,18 +44,11 @@ export class SuppliesFormComponent implements OnInit {
     this.formulario = this.formBiulder.group({
       id: [],
       name: [null, [Validators.minLength(3)]],
-      noteUsing: [],
-      group: this.formBiulder.group({
-        name: []
-      }),
-      subgroup: this.formBiulder.group({
-        name: []
-      }),
-      expenseType: this.formBiulder.group({
-        name: []
-      }),
       unity: [],
-
+      group: this.formBiulder.group({
+        id: []
+      }),
+      noteUsing: []
     });
   }
 
@@ -70,7 +66,14 @@ export class SuppliesFormComponent implements OnInit {
       });
   }
 
-
+ loadSubgroup() {
+   this.classificarionService.getIdSubgroup(2)
+   .subscribe (lista => {
+     this.subgroup = lista.map(sg => ({
+       label: sg.name, value: sg.id
+     }));
+   });
+ }
 
 
 

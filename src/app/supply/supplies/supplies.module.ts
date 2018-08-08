@@ -17,6 +17,7 @@ import { SuppliesComponent } from './supplies.component';
 import { SuppliesFormComponent } from './supplies-form/supplies-form.component';
 import { SuppliesListComponent } from './supplies-list/supplies-list.component';
 import { SearchComponent } from './supplies-list/search/search.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { SearchComponent } from './supplies-list/search/search.component';
     FileUploadModule,
     GalleriaModule,
     InputTextareaModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   declarations: [
     SuppliesComponent,

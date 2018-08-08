@@ -6,6 +6,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { ModuleWithProviders } from '../../node_modules/@angular/core';
 import { SuppliesListComponent } from './supply/supplies/supplies-list/supplies-list.component';
 import { SearchComponent } from './supply/supplies/supplies-list/search/search.component';
+import { NavbarComponent } from './menu/navbar/navbar.component';
 
 
 
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path: 'supplies', component: SuppliesComponent},
     {path: 'supplies/form', component: SuppliesFormComponent},
     {path: 'supplies/list', component: SuppliesListComponent},
+    {path: 'navbar', component: NavbarComponent},
 
 
     // apagar depois
