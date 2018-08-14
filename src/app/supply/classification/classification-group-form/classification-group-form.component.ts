@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '../../../../../
 })
 export class ClassificationGroupFormComponent implements OnInit {
 
+
   formulario: FormGroup;
   constructor(
     private service: ClassificationService,
@@ -17,17 +18,13 @@ export class ClassificationGroupFormComponent implements OnInit {
 
   ngOnInit() {
     this.configurarFormulario();
-
-
   }
 
 
   configurarFormulario() {
-
     this.formulario = this.formBuilder.group ({
       name: [null, [this.validarTamanhoMinimo(5)]]
     });
-
   }
 
   validarTamanhoMinimo(valor: number) {

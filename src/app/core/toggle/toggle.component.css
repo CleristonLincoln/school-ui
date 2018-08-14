@@ -1,0 +1,11 @@
+.toogle {
+    background-color: #8fb898;
+    width: 300px;
+    height: 100vh;
+    float: right;
+    z-index: 9998;
+}
+
+li{
+    background-color: black;
+}

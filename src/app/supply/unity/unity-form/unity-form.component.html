@@ -1,3 +1,30 @@
-<p>
-  unity-form works!
-</p>
+<div class="container">
+  {{formulario.value | json}}
+
+  <form autocomplete="false" (ngSubmit)="salvar()" [formGroup]="formulario">
+
+    <h2>Cadastro de unidades de medida</h2>
+
+
+    <div class="ui-g-4 ui-fluid">
+      <label for="">Nome</label>
+      <input pInputText formControlName="name">
+    </div>
+    <div class="ui-g-2 ui-fluid">
+      <label for="">Unidade</label>
+      <input pInputText formControlName="unity">
+    </div>
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Salvar" [disabled]="formulario.invalid"></button>
+    </div>
+
+  </form>
+
+
+</div>
+
+<div class="container">
+  <div class="ui-g-6 container">
+    <app-unity-list [novoPost]="cont"></app-unity-list>
+  </div>
+</div>

@@ -1,87 +1,56 @@
 <div class="container">
-  <h2>Pesquisa de insumos</h2>
-
-    <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
-  
-      {{formulario.value |json}}
-      <br> {{formulario.status}}
-  
-      <div class="ng-g">
-  
-        <div class="ui-g-12">
-  
-          <div class="ui-g">
-            <div class="ui-g-12">
-              <h2>Cadastro de Insumos</h2>
-            </div>
-          </div>
-  
-          <div class="ui-g">
-  
-            <div class="ui-g-1 ui-fluid">
-              <label>Código</label>
-              <input type="text" pInputText >
-            </div>
-  
-            <div class="ui-g-8 ui-fluid">
-              <label>Nome</label>
-              <input type="text" pInputText formControlName="name">
-            </div>
-  
-            <div class="ui-g-1 ui-fluid">
-              <label>Unidade</label>
-              <p-dropdown name="group" [options]="itens5" [autoWidth]="false" 
-              formControlName="unity" ></p-dropdown>
-            </div>
-  
-            <div class="ui-g-6 ui-fluid" formGroupName="group">
-              <label>Grupo</label>
-              <p-dropdown name="group" [options]="group" placeholder="Selecione" 
-                [autoWidth]="false" [filter]="true" formControlName="id" ></p-dropdown>
-                {{formulario.value.group.id }}
-            </div>
-  
-           <!-- <div class="ui-g-6 ui-fluid" formGroupName="subgroup">
-              <label>Subgrupo</label>
-              <p-dropdown name="group" [options]="subgroup" placeholder="Selecione" 
-              [autoWidth]="false" [filter]="true" formControlName="id"></p-dropdown>
-            </div>
-          -->
-            <div class="ui-g-4 ui-fluid" >
-              <label>Tipo</label>
-              <p-selectButton [options]="tipos" formContrlName="tipo"></p-selectButton>
-
-            </div>
-  
-            <div class="ui-g-12 ui-fluid">
-              <label for="">Nota de Uso</label>
-              <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" 
-              formControlName="noteUsing"></textarea>
-            </div>
-  
-  
-            <div class="ui-g-12">
-              <button pButton type="submit" label="Salvar" [disabled]="!formulario.valid"></button>
-            </div>
-  
-          </div>
-        </div>
-  
-      <!--  <div class="ui-g">
-          <div class="ui-g-4 image">
-            <p-galleria [images]="imagens" panelWidth="300" panelHeight="180" [showCaption]="false"></p-galleria>
-            <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUploadAuto($event)"
-              auto="true" chooseLabel="Browse"></p-fileUpload>
-  
-          </div>
-        </div> -->
-  
-      </div>
-  
-  
-  
-  
-  
-    </form>
-  
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <h2>Cadastro de Insumos</h2>
+    </div>
   </div>
+  {{formulario.value | json}}
+  <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
+
+    <div class="ui-g">
+      <div class="ui-g-1 ui-fluid">
+        <label>Código</label>
+        <input type="text" pInputText>
+      </div>
+      <div class="ui-g-8 ui-fluid">
+        <label>Nome</label>
+        <input type="text" pInputText formControlName="name">
+      </div>
+      <div class="ui-g-2 ui-fluid" formGroupName="unity">
+        <label>Unidade</label>
+        <p-dropdown name="unitys" [options]="unitys" [autoWidth]="false" formControlName="id" placeholder="Selecione..."></p-dropdown>
+      </div>
+      <div class="ui-g-6 ui-fluid">
+        <label>Grupo</label>
+        <p-dropdown name="group" [options]="groupList" placeholder="Selecione" [autoWidth]="false" [filter]="true" (onChange)="getSubgroup()"
+          formControlName="idGroup"></p-dropdown>
+      </div>
+      <div class="ui-g-6 ui-fluid" formGroupName="subgroup">
+        <label>Subgrupo</label>
+        <p-dropdown name="subgroup" [options]="subgroupList" placeholder="Selecione" [autoWidth]="false" [filter]="true" formControlName="id"></p-dropdown>
+      </div>
+      <div class="ui-g-4 ui-fluid">
+        <label>Tipo de insumo</label>
+        <p-selectButton [options]="typeItem" formControlName="typeItem"></p-selectButton>
+      </div>
+      <div class="ui-g-4 ui-fluid">
+        <label>Tipo de despesa</label>
+        <p-selectButton [options]="expenseType" formControlName="expenseType"></p-selectButton>
+      </div>
+
+      <div class="ui-g-12 ui-fluid">
+        <label for="">Nota de Uso</label>
+        <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" formControlName="noteUsing"></textarea>
+      </div>
+
+
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Salvar" [disabled]="!formulario.valid"></button>
+      </div>
+
+    </div>
+
+
+
+  </form>
+</div>

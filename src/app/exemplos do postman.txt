@@ -1,0 +1,22 @@
+GET Supplies
+{
+    id: 1,
+    name: "Gasolina",
+    image: null,
+    noteUsing: "aquisição de combustivel para transporte",
+    typeItem: "M",
+    expenseType: "CUSTEIO",
+    subgroup: {
+        id: 2,
+        name: "Combustivel",
+            groupItem: {
+                 id: 1,
+                name: "Transporte"
+            }
+    },
+    unity: {
+        id: 1,
+        name: "Litro",
+        unity: "L"
+    }
+}
