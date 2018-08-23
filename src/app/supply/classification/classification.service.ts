@@ -47,12 +47,9 @@ export class ClassificationService {
   }
 
 
-  removeSubgroup(subgroup: Subgroup | number) {
-   // return this.http.delete(`${this.url}subgroup/${id}`);
-   const id = typeof subgroup === 'number' ? subgroup : subgroup.id;
-   const url = `${this.url}subgroup/${id}`;
-  console.log(`Id apresentado ao service para deletar${id}`);
-    this.http.delete<Subgroup>(url).subscribe();
+  removeSubgroup(id: any) {
+   this.http.delete(`${this.url}subgroup/${id}`, httpOptions)
+   .subscribe();
   }
 
 }

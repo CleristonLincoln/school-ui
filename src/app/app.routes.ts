@@ -9,6 +9,7 @@ import { ModuleWithProviders } from '../../node_modules/@angular/core';
 import { SuppliesListComponent } from './supply/supplies/supplies-list/supplies-list.component';
 import { SearchComponent } from './supply/supplies/supplies-list/search/search.component';
 import { CompanyFormComponent } from './company/company-form/company-form.component';
+import { SolicitationComponent } from './solicitation/solicitation.component';
 
 
 
@@ -22,6 +23,7 @@ export const routes: Routes = [
     {path: 'navbar', component: NavbarComponent},
     {path: 'company/form', component: CompanyFormComponent},
     {path: 'company/list', component: CompanyListComponent},
+    {path: 'solicitation', component: SolicitationComponent},
 
     // apagar depois
     {path: 'search', component: SearchComponent}

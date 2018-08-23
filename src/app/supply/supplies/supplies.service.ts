@@ -20,9 +20,15 @@ export class SuppliesService {
     private http: HttpClient
   ) { }
 
-  getAll(): Observable<any> {
 
+  getAll(): Observable<any> {
     return this.http.get(`${this.url}?resumo`);
   }
+
+  post(supplies: Supplies) {
+    this.http.post(`${this.url}`, supplies, httpOptions)
+    .subscribe();
+  }
+
 
 }

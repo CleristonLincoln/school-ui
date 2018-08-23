@@ -37,13 +37,15 @@ export class ClassificationSubgroupListComponent implements OnInit, OnChanges {
 
   // detecta que o idGrupo foi alterado
   ngOnChanges(changes: SimpleChanges): void {
-    // console.log(changes);
+ console.log(changes);
     this.getIdGroup();
   }
 
 
-  removeSubgroup(subgroup: Subgroup): void {
-    this.service.removeSubgroup(subgroup.id);
+  removeSubgroup(u: Subgroup): void {
+    this.service.removeSubgroup(u.id);
+    this.getIdGroup();
+
   }
 
 }

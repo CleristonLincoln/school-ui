@@ -1,4 +1,3 @@
-import { Subgroup, Group } from './../../../entity';
 import { ClassificationService } from './../classification.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '../../../../../node_modules/@angular/forms';

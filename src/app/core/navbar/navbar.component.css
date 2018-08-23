@@ -5,5 +5,10 @@
 
 .pi-bars {
     margin-top: 9px;
-    font-size: 1.3em;
+    font-size: 1.4em;
+}
+
+.pi-bars:hover {
+    font-size: 1.7em;
+    
 }

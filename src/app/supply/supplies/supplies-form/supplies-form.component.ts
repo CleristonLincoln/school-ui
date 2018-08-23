@@ -67,7 +67,7 @@ export class SuppliesFormComponent implements OnInit {
 
 
   salvar() {
-    console.log(this.formulario.value);
+   this.service.post(this.formulario.value);
   }
 
 

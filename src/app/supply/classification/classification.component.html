@@ -1,14 +1,15 @@
-<div class="ui-g">
-    <div class="ui-g-6">
-        <app-classification-group-form></app-classification-group-form>
-        <app-classification-group-list (idSelecionado)='aoSelecionar($event)'></app-classification-group-list>
+
+    <div class="container">
+    <div class="ui-g">
+        <div class="ui-g-6">
+            <app-classification-group-form></app-classification-group-form>
+            <app-classification-group-list (idSelecionado)='aoSelecionar($event)'></app-classification-group-list>
+        </div>
+
+        <div class="ui-g-6">
+            <app-classification-subgroup-form [idGrupo]="idGroup"></app-classification-subgroup-form>
+            <app-classification-subgroup-list [idGrupo]="idGroup"></app-classification-subgroup-list>
+        </div>
+
     </div>
-
-    <div class="ui-g-6">
-
-        <app-classification-subgroup-form [idGrupo]="idGroup"></app-classification-subgroup-form>
-        <app-classification-subgroup-list [idGrupo]="idGroup" ></app-classification-subgroup-list>
-       Escutando {{idGroup}}
-    </div>
-
 </div>

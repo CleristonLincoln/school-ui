@@ -1,26 +1,14 @@
+<form autocomplete="false" (ngSubmit)="salvar()" [formGroup]="formulario">
 
-      <form autocomplete="false" (ngSubmit)="salvar()" [formGroup]="formulario">
+  <h2>Cadastro de grupos</h2>
 
-        <h2>Cadastro de grupos</h2>
+  <div class="ui-g-10 ui-fluid">
+    <label for="">Nome</label>
+    <input pInputText formControlName="name">
+  </div>
 
-       c <i class="fab fa-adn"></i>
+  <div class="ui-g-2">
+    <button pButton type="submit" label="Salvar" [disabled]="formulario.invalid"></button>
+  </div>
 
-
-        <div class="ui-g-10 ui-fluid">
-          <label for="">Nome</label>
-          <input pInputText formControlName="name">
-
-          <app-message 
-          [control]="formulario.get('name')" 
-          error="required" 
-          text="É obrigarotioS">
-         </app-message>
-        </div>
-
-        <div class="ui-g-2">
-          <button pButton type="submit" label="Salvar" [disabled]="formulario.invalid"></button>
-        </div>
-
-      </form>
-
-
+</form>
