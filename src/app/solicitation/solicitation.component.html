@@ -23,13 +23,13 @@
         <p-dropdown [options]="empresas" [autoWidth]="false" placeholder="Selecione"></p-dropdown>
       </div>
 
-      <br> <br> 
+
       <div class="ui-g-12 ui-fluid">
         <label for="">Observação</label>
         <input pInputText type="text">
       </div>
       <div class="ui-g-12">
-        <button pButton type="submit" label="Salvar"></button>
+        <button pButton type="submit" label="Novo Insumo"></button>
       </div>
 
     </div>
@@ -42,18 +42,25 @@
         <p-table [value]="insumos">
           <ng-template pTemplate="header">
             <tr>
-              <th>nº</th>
-              <th>Codigo</th>
-              <th>Descrição</th>
-              <th>Und</th>
-              <th>Quant</th>
-              <th>Data entrega</th>
-              <th>Açoes</th>
+              <th class="col-h-n">nº</th>
+              <th class="col-h-c">Codigo</th>
+              <th class="col-h-d">Descrição</th>
+              <th class="col-h-u">Und</th>
+              <th class="col-h-q">Quant</th>
+              <th class="col-h-dt">Data entrega</th>
+              <th class="col-h-a">Açoes</th>
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-i>
             <tr>
-              <td>{{car.vin}}</td>
+              <td class="col-b-n">1</td>
+              <td class="col-b-c">34241</td>
+              <td class="col-b-d">Cimento</td>
+              <td class="col-b-u">kg</td>
+              <td class="col-b-q">1231,1</td>
+              <td class="col-b-dt">12/11/2121</td>
+              <td class="col-b-a"></td>
+              
 
             </tr>
           </ng-template>

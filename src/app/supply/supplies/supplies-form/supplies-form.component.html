@@ -7,6 +7,7 @@
   <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
 
     <div class="ui-g">
+
       <div class="ui-g-1 ui-fluid">
         <label>Código</label>
         <input type="text" pInputText>
@@ -21,8 +22,7 @@
       </div>
       <div class="ui-g-6 ui-fluid">
         <label>Grupo</label>
-        <p-dropdown name="group" [options]="groupList" placeholder="Selecione" [autoWidth]="false" [filter]="true" (onChange)="getSubgroup()"
-          formControlName="idGroup"></p-dropdown>
+        <p-dropdown name="group" [options]="groupList" placeholder="Selecione" [autoWidth]="false" [filter]="true" (onChange)="getSubgroup()" formControlName="idGroup"></p-dropdown>
       </div>
       <div class="ui-g-6 ui-fluid" formGroupName="subgroup">
         <label>Subgrupo</label>
@@ -36,20 +36,16 @@
         <label>Tipo de despesa</label>
         <p-selectButton [options]="expenseType" formControlName="expenseType"></p-selectButton>
       </div>
-
       <div class="ui-g-12 ui-fluid">
         <label for="">Nota de Uso</label>
         <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" formControlName="noteUsing"></textarea>
       </div>
-
 
       <div class="ui-g-12">
         <button pButton type="submit" label="Salvar" [disabled]="!formulario.valid"></button>
       </div>
 
     </div>
-
-
 
   </form>
 </div>

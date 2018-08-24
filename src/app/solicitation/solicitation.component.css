@@ -3,6 +3,49 @@ footer p {
     padding: 0;
 }
 
-panel {
-    margin-top: 30px;
+
+.col-h-n {
+    width: 30px;
+    text-align: center;
+}
+.col-b-n {
+    text-align: center;
+}
+.col-h-c {
+    width: 80px;
+    text-align: center;
+}
+
+.col-b-c {
+    text-align: center;
+}
+
+.col-h-d {
+    /* o que sobrar será o tamanho da descrição*/
+    text-align: left;
+}
+.col-h-u {
+    width: 40px;
+    text-align: center;
+}
+.col-b-u {
+    text-align: center;
+}
+.col-h-q {
+    width: 70px;
+    text-align: center;
+}
+.col-b-q {
+    text-align: center;
+}
+.col-h-dt {
+    width: 150px;
+    text-align: center;
+}
+.col-b-dt {
+    text-align: center;
+}
+.col-h-a {
+    width: 70px;
+    text-align: center;
 }

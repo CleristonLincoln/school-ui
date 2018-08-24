@@ -24,13 +24,6 @@ export class ToggleComponent implements OnInit {
             ]
         },
         {
-            label: 'Edit',
-            items: [
-                { label: 'Undo', icon: 'fa fa-refresh' },
-                { label: 'Redo', icon: 'fa fa-repeat' }
-            ]
-        },
-        {
             label: 'Solicitação',
             items: [
                 {label: 'Nova Solicitação', routerLink: ['/solicitation']}

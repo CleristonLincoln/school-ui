@@ -1,5 +1,8 @@
 .image-card {
-float: right;
-
+    margin-left: 815px;
+    margin-top: 20px;
+    height: 300px;
+    position: absolute;
+    background-color: aqua;
 }
 
