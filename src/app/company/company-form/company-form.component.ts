@@ -1,4 +1,6 @@
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Company } from '../../entity';
 
 @Component({
   selector: 'app-company-form',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CompanyFormComponent implements OnInit {
 
-  constructor() { }
+  private formulario: FormGroup;
+  company: Company[];
+
+
+  constructor(
+    private formbuilder: FormBuilder
+
+  ) {   }
 
   ngOnInit() {
+    this.configurarFormulario();
   }
+
+
+  configurarFormulario() {
+    this.formulario = this.formbuilder.group ({
+      id: [],
+      nameCompany: [],
+      nameSocial: [],
+      cnpj: [],
+      ie: [],
+      im: [],
+      complement: [],
+      numberHome: [],
+      street: []
+    });
+  }
+
+  salvar() {
+    console.log(this.formulario.value);
+  }
+
 
 }

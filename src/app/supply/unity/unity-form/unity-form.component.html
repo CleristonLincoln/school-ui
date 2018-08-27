@@ -1,11 +1,12 @@
 <div class="container">
-
-  <form autocomplete="false" (ngSubmit)="salvar()" [formGroup]="formulario">
+<div class="ui-g">
+  <div class="ui-g-6">
+      <form autocomplete="false" (ngSubmit)="salvar()" [formGroup]="formulario">
 
     <h2>Cadastro de unidades de medida</h2>
 
 
-    <div class="ui-g-4 ui-fluid">
+    <div class="ui-g-8 ui-fluid">
       <label for="">Nome</label>
       <input pInputText formControlName="name">
     </div>
@@ -13,17 +14,20 @@
       <label for="">Unidade</label>
       <input pInputText formControlName="unity">
     </div>
-    <div class="ui-g-12">
+    <div class="ui-g-2">
       <button pButton type="submit" label="Salvar" [disabled]="formulario.invalid"></button>
     </div>
 
   </form>
 
+</div>
+</div>
 
+ 
 </div>
 
 <div class="container">
-  <div class="ui-g-6 container">
+ <div class="ui-g-6 container">
     <app-unity-list [novoPost]="cont"></app-unity-list>
   </div>
 </div>

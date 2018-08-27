@@ -34,9 +34,17 @@ export class UnityListComponent implements OnInit, OnChanges {
       });
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+
+  deleteUnity(u: Unity) {
+    this.service.deleteEntity(u.id);
     this.getAllEntity();
+  }
+
+
+  ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
+
+    this.getAllEntity();
   }
 
 

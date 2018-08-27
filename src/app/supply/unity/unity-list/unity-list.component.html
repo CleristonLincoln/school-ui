@@ -1,22 +1,22 @@
 <p-table [value]="list" [responsive]="true"  [paginator]="true" [rows]="6">
   <ng-template pTemplate="header">
     <tr>
-      <th class="col-n">Nº</th>
-      <th class="col-d">Nome</th>
-      <th class="col-u">Unidade</th>
-      <th class="col-a">Ações</th>
+      <th class="col-h-n">Nº</th>
+      <th class="col-h-d">Nome</th>
+      <th class="col-h-u">Unidade</th>
+      <th class="col-h-a">Ações</th>
     </tr>
   </ng-template>
 
 
   <ng-template pTemplate="body" let-rowData let-u>
     <tr>
-      <td class="ui-b-n"> {{ u.id }}</td>
-      <td>{{ u.name }}</td>
-      <td>{{u.unity}}</td>
-      <td class="col-acoes">
+      <td class="col-b-n"> {{ u.id }}</td>
+      <td class="col-b-d">{{ u.name }}</td>
+      <td class="col-b-u">{{u.unity}}</td>
+      <td class="col-b-a">
         <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></button>
-        <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+        <button id="excluir" pButton icon="pi pi-trash" pTooltip="Excluir" (click)="deleteUnity(u)"></button>
       </td>
     </tr>
   </ng-template>

@@ -1,4 +1,6 @@
 
+
+
 export class Supplies {
     id: number;
     name: string;
@@ -8,7 +10,6 @@ export class Supplies {
     unity = new Unity();
     expenseType: string;
 }
-
 
 export class Group {
     id: number;
@@ -27,19 +28,32 @@ export class Subgroup  {
     groupItem = new Group();
 }
 
-
-export class Contato {
-    id: number;
-    name: string;
-    fone1: string;
-    fone2: string;
-    email: string;
-    funcao: string;
-}
-
 export class Company {
     id: number;
+    nameCompany: string;
     socialName: string;
-    contatos = new Array<Contato>();
+    image: string;
+    cnpj: string;
+    ie: string;
+    im: string;
+    complement: string;
+    numberHome: string;
+    street: string;
+    people =  new People();
     supplies = new Array<Supplies>();
+}
+
+export class People {
+    id: number;
+    name: string;
+    cpf: string;
+    email: string;
+    phone01: string;
+    phone2: string;
+    note: string;
+    numberHome: string;
+    complemente: string;
+    ative: boolean;
+    street: string;
+    function = new Function();
 }

@@ -1,25 +1,24 @@
 <div class="container">
+    {{formulario.value | json}}
+  <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
+
+    
 
 
-
-  <form>
     <h1>Cadastro de empresas</h1>
 
     <div class="ui-g">
       <div class="ui-g-2 ui-fluid">
         <label for="">Código</label>
-        <input type="text" pInputText formContrlName="">
+        <input type="text" pInputText formControlName="id">
       </div>
     </div>
-
-
 
     <div class="ui-g">
       <div class="ui-g-8 ui-fluid">
         <label for="">Razão Social</label>
-        <input type="text" pInputText formContrlName="">
+        <input type="text" pInputText formControlName="nameCompany">
       </div>
-
 
       <div class="ui-g-3 image-card">
         <p-card>
@@ -35,7 +34,7 @@
 
       <div class="ui-g-8 ui-fluid">
         <label for="">Nome Fantasia</label>
-        <input type="text" pInputText formContrlName="">
+        <input type="text" pInputText formControlName="nameSocial">
       </div>
     </div>
 
@@ -43,55 +42,53 @@
     <div class="ui-g">
       <div class="ui-g-2 ui-fluid">
         <label for="">CNPJ</label>
-        <input type="text" pInputText formContrlName="">
+        <input type="text" pInputText formControlName="cnpj">
       </div>
       <div class="ui-g-2 ui-fluid">
         <label for="">Inscrição Estadual</label>
-        <input type="text" pInputText formContrlName="">
+        <input type="text" pInputText formControlName="ie">
       </div>
       <div class="ui-g-2 ui-fluid">
         <label for="">Inscrição Municipal</label>
-        <input type="text" pInputText formContrlName="">
+        <input type="text" pInputText formControlName="im">
       </div>
     </div>
 
     <div class="ui-g">
       <div class="ui-g-2 ui-fluid">
-        <label for="">Paiz</label>
-        <input type="text" pInputText formContrlName="">
+        <label for="">País</label>
+        <p-dropdown [autoWidth]="false"></p-dropdown>
       </div>
       <div class="ui-g-3 ui-fluid">
         <label for="">Estado</label>
-        <input type="text" pInputText formContrlName="">
+        <input type="text" pInputText >
       </div>
       <div class="ui-g-3 ui-fluid">
         <label for="">Bairro</label>
-        <input type="text" pInputText formContrlName="">
+        <p-dropdown [autoWidth]="false"></p-dropdown>
       </div>
     </div>
     <div class="ui-g">
       <div class="ui-g-7 ui-fluid">
         <label for="">Logradouro</label>
-        <input type="text" pInputText formContrlName="">
+        <p-dropdown [autoWidth]="false" formControlName="street"></p-dropdown>
+        
       </div>
       <div class="ui-g-1 ui-fluid">
         <label for="">Nº</label>
-        <input type="text" pInputText formContrlName="">
+        <input type="text" pInputText formControlName="numberHome">
       </div>
     </div>
     <div class="ui-g">
       <div class="ui-g-12 ui-fluid">
         <label for="">Complemento</label>
-        <input type="text" pInputText formContrlName="">
+        <input type="text" pInputText formControlName="complement">
       </div>
-      <div class="ui-g-12 ui-fluid">
-        <label for="">Observação</label>
-        <input type="text" pInputText formContrlName="">
-      </div>
-
     </div>
 
-    <div class="ui-g">
+    <!--
+        Cadastrar esses dados no backend
+      <div class="ui-g">
       <div class="ui-g-2 ui-fluid">
         <label for="">Telefone</label>
         <input type="text" pInputText formContrlName="">
@@ -105,12 +102,10 @@
         <input type="text" pInputText formContrlName="">
       </div>
     </div>
-
+  -->
     <div class="ui-g-12">
       <app-companysupplies-list></app-companysupplies-list>
     </div>
-
-
 
     <div class="ui-g-12">
       <button pButton type="submit" label="Salvar"></button>

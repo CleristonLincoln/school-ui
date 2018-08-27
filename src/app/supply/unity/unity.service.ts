@@ -29,5 +29,8 @@ export class UnityService {
     this.http.post<Unity>(`${this.url}unitys`, unity, httpOptions)
     .subscribe();
   }
-
+  deleteEntity(id: any) {
+    this.http.delete(`${this.url}unitys/${id}`, httpOptions)
+    .subscribe();
+  }
 }
