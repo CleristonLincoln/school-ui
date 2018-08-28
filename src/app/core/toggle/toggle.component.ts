@@ -12,23 +12,47 @@ export class ToggleComponent implements OnInit {
 
     ngOnInit() {
 
-        this.items = [{
-            label: 'Cadastro',
-            items: [
+        this.items = [
+            {
+              label: 'Cadastro',
+              items: [
                 { label: 'Insumo-form', icon: 'pi pi-fw pi-plus', routerLink: ['/supplies/form'] },
                 { label: 'Insumo-list', icon: 'pi pi-trash', routerLink: ['/supplies/list'] },
                 { label: 'Unidade', icon: 'pi pi-trash', routerLink: ['/unity'] },
                 { label: 'Classificação', icon: 'pi pi-trash', routerLink: ['/classification'] },
                 { label: 'Empresa-form', icon: 'pi pi-trash', routerLink: ['/company/form'] },
                 { label: 'Empresa-list', icon: 'pi pi-trash', routerLink: ['/company/list'] }
-            ]
-        },
-        {
+              ]
+            },
+
+           {
             label: 'Solicitação',
             items: [
-                {label: 'Nova Solicitação', routerLink: ['/solicitation']}
-            ]
-        }];
+                {label: 'Nova Solicitação', routerLink: ['/solicitation']},
+                {label: 'Follow-up', routerLink: ['/solicitation/followup']}
+              ]
+            },
+
+            {
+                label: 'Coleta',
+                items: [
+                    {label: '', routerLink: ['']}
+                ]
+            },
+            {
+                label: 'Pedido',
+                items: [
+                    {label: '', routerLink: ['']}
+                ]
+            },
+            {
+                label: 'Recebimentos',
+                items: [
+                    {label: '', routerLink: ['']}
+                ]
+            }
+
+        ];
     }
 
 }

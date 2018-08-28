@@ -13,7 +13,7 @@ import {GalleriaModule} from 'primeng/galleria';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 
 
-import { SuppliesComponent } from './supplies.component';
+
 import { SuppliesFormComponent } from './supplies-form/supplies-form.component';
 import { SuppliesListComponent } from './supplies-list/supplies-list.component';
 import { SearchComponent } from './supplies-list/search/search.component';
@@ -36,14 +36,14 @@ import { SharedModule } from '../../shared/shared.module';
     SharedModule
   ],
   declarations: [
-    SuppliesComponent,
+
     SuppliesFormComponent,
     SuppliesListComponent,
     SearchComponent,
     SearchComponent
   ],
   exports: [
-    SuppliesComponent,
+
     SuppliesFormComponent,
     SuppliesListComponent,
     SearchComponent,

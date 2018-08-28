@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { url } from 'inspector';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompanyService {
 
-  urt = 'http://localhos?8080/';
+  url = 'http://localhos?8080/';
 
   constructor(
     private http: HttpClient
@@ -15,7 +15,7 @@ export class CompanyService {
 
 
 getCounty() {
- this.http.get(`${url}coutrys`).subscribe();
+ this.http.get(`${this.url}coutrys`).subscribe();
 }
 
 
